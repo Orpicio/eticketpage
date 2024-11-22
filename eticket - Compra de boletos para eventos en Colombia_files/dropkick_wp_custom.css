@@ -1,0 +1,528 @@
+/* este es el trick para el fix de que no se muestre bien */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  
+
+/*estos son los css del filtro de categorias y estados */
+.eventos_listado {
+  width: 100%;
+  max-width:300px; 
+ }
+  .eventos_listado .dk_container {
+    width: 100% !important;
+    outline: none;
+    /*font-family: Montserrat, sans-serif;*/
+    line-height: normal;
+    cursor: pointer; }
+  .eventos_listado a:hover {
+    text-decoration: none; }
+  .eventos_listado .dk_toggle {
+    border: 1px solid #003366; /*LO PONGO DEL MISMO COLOR QUE EL FONDO */
+    color: #FFFFFF;
+    outline: none;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+	
+	/* para que funcione sin el ultimo fix es necesario ocultar la flecha de bajada, eliminar el padding lateral (12px 0px)  y fijar un tamaño en eñ div que contiene el listado . puede ser un width 100% con un max -width en px*/
+    padding: 20px 18px;
+    transition: 0.2s;
+    position: relative;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100% !important; }
+	/* para que funcione sin el ultimo fix es necesario ocultar la flecha de bajada, eliminar el padding lateral (12px 0px)  y fijar un tamaño en eñ div que contiene el listado . puede ser un width 100% con un max -width en px*/
+	/*esta es la flecha de bajada */
+    .eventos_listado .dk_toggle:after {
+      font-family: iconos-eticket;
+      line-height: normal;
+      font-weight: normal;
+      font-size: 12px;
+	  text-transform:none;
+	  
+      content: "";
+      position: absolute;
+      top: 28px;
+      right: 10px; 
+	 
+	 /*FLECHA PEQUEÑA */ 
+		width: 0;
+		height: 0;	  
+		border-width: 6px 6px 0 6px;
+		border-style: solid;
+		border-color: #FFFFFF transparent;
+	  
+	  
+	  }
+	  
+    .eventos_listado_estados .dk_toggle:before {
+      font-family: iconos-eticket;
+	  color:#FFFFFF;
+      line-height: normal;
+      font-weight: normal;
+      font-size: 24px;
+	  text-transform:none;	  
+      content: "\77";
+      position: absolute;
+      top: 15px;
+      left: 10px; 
+	  
+	  }
+    .eventos_listado_categorias .dk_toggle:before {
+      font-family: iconos-eticket;
+	  color:#FFFFFF;	  
+      line-height: normal;
+      font-weight: normal;
+      font-size: 24px;
+	  text-transform:none;	  
+      content: "\78";
+      position: absolute;
+      top: 15px;
+      left: 10px; }
+	  
+
+  
+	/*ESTAS SON ACCIONES DEL click */
+	  
+    .eventos_listado.dk_open .dk_toggle:after {
+	border-color: #003366 transparent;  /* pone la flechita en azul */
+	}
+	.eventos_listado.dk_open .dk_toggle:before {
+	color:#003366; /* pone los iconos en azul */
+	}
+
+	/*ESTAS es ACCIONES DEL focus */
+	  
+  .eventos_listado.dk_focus .dk_toggle, .eventos_listado:focus .dk_toggle {
+    border-color:#fff; /*LO PONGO DEL MISMO COLOR QUE EL FONDO */
+    transition: border-color 0s linear; }
+	
+	/*ESTAS es ACCIONES DEL click */
+	
+  .eventos_listado.dk_open .dk_toggle {
+	border: 1px solid #fff;  /*este es el borde de la caja en azul */
+    color: #003366;
+	background-color:#FFF;
+	}
+	
+  .eventos_listado .dk_options {
+	  border-left: 1px solid #C2C2C2;
+	  border-right: 1px solid #C2C2C2;
+	  border-bottom: 1px solid #C2C2C2;
+	  border-top: 1px solid #C2C2C2; /*este queda en gris*/
+
+    /*border-top: 1px solid rgba(0, 0, 0, 0.001);*/
+    z-index: 40; }
+    .eventos_listado .dk_options li {
+      border-bottom: 1px solid #C2C2C2; }
+    .eventos_listado .dk_options li:last-child {
+      border-bottom: none; }
+    .eventos_listado .dk_options a {
+      background: #FFF;
+      color: #003366;
+	  font-weight:normal;
+      font-size: 12px;
+      text-transform: uppercase;
+      cursor: pointer;
+      padding: 3px 8px; }
+      .eventos_listado .dk_options a:hover {
+        background: #125cb7; /*este es el fondo del color del listado */
+        color: #FFF !important; }
+  .eventos_listado .dk_options_inner {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+	max-height:250px;   /*es para que no sea eterna la altura y se muestre el scroll*/	
+	}
+
+
+
+/*estos son los css del filtro de puntos de ventas */
+.puntosdeventa_filtro {
+  width:250px; 
+ }
+ 
+ .CatButton .puntosdeventa_filtro  a {
+	 margin:0px;
+ }
+ 
+  .puntosdeventa_filtro .dk_container {
+    width: 100% !important;
+    outline: none;
+    /*font-family: Montserrat, sans-serif;*/
+    line-height: normal;
+    cursor: pointer; }
+  .puntosdeventa_filtro a:hover {
+    text-decoration: none; }
+  .puntosdeventa_filtro .dk_toggle {
+    border: 1px solid #003366; /*lo pongo de otro color parta que se note*/
+    color: #003366;
+    outline: none;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+	
+	/* para que funcione sin el ultimo fix es necesario ocultar la flecha de bajada, eliminar el padding lateral (12px 0px)  y fijar un tamaño en eñ div que contiene el listado . puede ser un width 100% con un max -width en px*/
+    padding: 5px 18px;
+    transition: 0.2s;
+    position: relative;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100% !important; }
+	/* para que funcione sin el ultimo fix es necesario ocultar la flecha de bajada, eliminar el padding lateral (12px 0px)  y fijar un tamaño en eñ div que contiene el listado . puede ser un width 100% con un max -width en px*/
+	/*esta es la flecha de bajada */
+    .puntosdeventa_filtro .dk_toggle:after {
+      font-family: iconos-eticket;
+      line-height: normal;
+      font-weight: normal;
+      font-size: 12px;
+	  text-transform:none;
+	  
+      content: "";
+      position: absolute;
+      top: 13px;
+      right: 10px; 
+	 
+	 /*FLECHA PEQUEÑA */ 
+		width: 0;
+		height: 0;	  
+		border-width: 6px 6px 0 6px;
+		border-style: solid;
+		border-color: #003366 transparent; /*color de la flecha */
+	  
+	  
+	  }
+	   
+
+	  
+	/*ESTAS SON ACCIONES DEL click */
+	  
+    .puntosdeventa_filtro.dk_open .dk_toggle:after {
+	border-color: #003366 transparent;  /* pone la flechita en azul */
+	}
+
+	/*ESTAS es ACCIONES DEL focus */
+	  
+  .puntosdeventa_filtro.dk_focus .dk_toggle, .puntosdeventa_filtro:focus .dk_toggle {
+    border-color:#003366; /*LO PONGO DEL MISMO COLOR QUE EL FONDO */
+    transition: border-color 0s linear; }
+	
+	/*ESTAS es ACCIONES DEL click */
+	
+  .puntosdeventa_filtro.dk_open .dk_toggle {
+	border: 1px solid #003366;  /*este es el borde de la caja en azul */
+    color: #003366;
+	background-color:#FFF;
+	}
+	
+  .puntosdeventa_filtro .dk_options {
+	  border-left: 1px solid #C2C2C2;
+	  border-right: 1px solid #C2C2C2;
+	  border-bottom: 1px solid #C2C2C2;
+	  border-top: 1px solid #C2C2C2; /*este queda en gris*/
+
+    /*border-top: 1px solid rgba(0, 0, 0, 0.001);*/
+    z-index: 40; }
+    .puntosdeventa_filtro .dk_options li {
+      border-bottom: 1px solid #C2C2C2; }
+    .puntosdeventa_filtro .dk_options li:last-child {
+      border-bottom: none; }
+    .puntosdeventa_filtro .dk_options a {
+      background: #FFF;
+      color: #003366;
+	  font-weight:normal;
+      font-size: 12px;
+      text-transform: uppercase;
+      cursor: pointer;
+      padding: 3px 8px; }
+      .puntosdeventa_filtro .dk_options a:hover {
+        background: #125cb7; /*este es el fondo del color del listado */
+        color: #FFF !important; }
+  .puntosdeventa_filtro .dk_options_inner {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+	max-height:250px;  /*es para que no sea eterna la altura y se muestre el scroll*/	
+	
+	}
+	
+	
+
+/*estos son los css de los formularios */
+.formulario_filtro {
+  width: 100% !important; /* se destaca la importancia de que ocupe el 100 del area disponible */  
+  /*width:298px;*/
+ }
+  .formulario_filtro .dk_container {
+    width: 100% !important; 
+    outline: none;
+    /*font-family: Montserrat, sans-serif;*/
+    line-height: normal;
+    cursor: pointer; }
+  .formulario_filtro a:hover {
+    text-decoration: none; }
+  .formulario_filtro .dk_toggle {
+    /*border: 1px solid #003366; /*  quito el borde */
+    color: #003366;  /* color azul para los formularios : hace match con el azul de los iconos  de la clase: iconos_formularios */
+    outline: none;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+	
+	/* para que funcione sin el ultimo fix es necesario ocultar la flecha de bajada, eliminar el padding lateral (12px 0px)  y fijar un tamaño en eñ div que contiene el listado . puede ser un width 100% con un max -width en px*/
+    padding: 7px 10px 7px 34px;
+    transition: 0.2s;
+    position: relative;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100% !important; }
+	/* para que funcione sin el ultimo fix es necesario ocultar la flecha de bajada, eliminar el padding lateral (12px 0px)  y fijar un tamaño en eñ div que contiene el listado . puede ser un width 100% con un max -width en px*/
+	
+	
+	.formulario_filtro.fomulario_limpio .dk_toggle {
+	padding: 7px 10px 7px 10px;	
+	}
+	
+	
+	
+	
+	/*esta es la flecha de bajada */
+    .formulario_filtro .dk_toggle:after {
+      font-family: iconos-eticket;
+      line-height: normal;
+      font-weight: normal;
+      font-size: 12px;
+	  text-transform:none;
+	  
+      content: "";
+      position: absolute;
+      top: 15px;
+      right: 10px; 
+	 
+	 /*FLECHA PEQUEÑA */ 
+		width: 0;
+		height: 0;	  
+		border-width: 6px 6px 0 6px;
+		border-style: solid;
+		border-color: #000000 transparent;
+	  
+	  }
+	  
+    .formulario_filtro.formulario_estado .dk_toggle:before {
+      font-family: iconos-eticket;
+	  /*color:#000000;*/
+      line-height: normal;
+      font-weight: normal;
+	  text-transform:none;	  
+      content: "\77";  /*Unicode Hexadecimal*/
+      position: absolute;
+      top: 9px;
+      left: 10px; 
+	  
+	  }
+	  
+    .formulario_filtro.formulario_user .dk_toggle:before {
+      font-family: iconos-eticket;
+	  /*color:#000000;*/
+      line-height: normal;
+      font-weight: normal;
+	  text-transform:none;	  
+      content: "\72";  /*Unicode Hexadecimal*/
+      position: absolute;
+      top: 9px;
+      left: 10px; 
+	  
+	  }	  
+	  
+    .formulario_filtro.formulario_tarjeta .dk_toggle:before {
+      font-family: iconos-eticket;
+	  /*color:#000000;*/
+      line-height: normal;
+      font-weight: normal;
+	  text-transform:none;	  
+      content: "\63"; /*Unicode Hexadecimal*/
+      position: absolute;
+      top: 9px;
+      left: 10px; 
+	  
+	  }
+	  
+    .formulario_filtro.formulario_info .dk_toggle:before {
+      font-family: iconos-eticket;
+	  /*color:#000000;*/
+      line-height: normal;
+      font-weight: normal;
+	  text-transform:none;	  
+      content: "\6c"; /*Unicode Hexadecimal*/
+      position: absolute;
+      top: 9px;
+      left: 10px; 
+	  
+	  }
+	  
+	  	  
+	  
+
+  
+	/*ESTAS SON ACCIONES DEL click */
+	
+	.formulario_filtro a.dk_toggle.dk_label:hover {  /*este forza el color negro en el "a" de las clases */
+	color:#000000;
+	border:0px;
+    outline: none;
+    box-shadow:0px;	
+	border-radius:0;
+		
+	}
+	
+	  
+    .formulario_filtro.dk_open .dk_toggle:after {
+	border-color: #000000 transparent;  /* dejamos la flechita en negro */
+	}
+
+	/*ESTAS es ACCIONES DEL focus */
+	  
+  .formulario_filtro.dk_focus .dk_toggle, .formulario_filtro:focus .dk_toggle {
+    /*border-color:#fff; /* quito el borde */
+    transition: border-color 0s linear; }
+	
+	/*ESTAS es ACCIONES DEL click */
+	
+  .formulario_filtro.dk_open .dk_toggle {
+	/*border: 1px solid #fff;  /* quitamos el borde*/
+    /*color: #003366;*/
+	background-color:#FFF;
+	}
+	
+  .formulario_filtro .dk_options {
+		border-left: 1px solid #C2C2C2;
+		border-right: 1px solid #C2C2C2;
+		border-bottom: 1px solid #C2C2C2;
+		border-top: 1px solid #C2C2C2; /*este queda en gris*/
+ 		margin-top: 1px; /*antes tenia un menos 1*/
+		/*border-top: 1px solid rgba(0, 0, 0, 0.001);*/
+		z-index: 40; 
+		}
+	
+    .formulario_filtro .dk_options li {
+      border-bottom: 1px solid #C2C2C2; }
+    .formulario_filtro .dk_options li:last-child {
+      border-bottom: none; }
+    .formulario_filtro .dk_options a {
+      background: #FFF;
+      color: #000000; /*este es el que cambia el color de  la lista del drop */
+	  font-weight:normal;
+      font-size: 12px;
+      text-transform: uppercase;
+      cursor: pointer;
+      padding: 3px 8px; }
+      .formulario_filtro .dk_options a:hover {
+        background: #125cb7; /*este es el fondo del color del listado */
+        color: #FFF !important; }
+	
+	
+		
+  .formulario_filtro.fomulario_limpio .dk_options_inner {
+    list-style: none;
+    margin: 0;
+    padding: 0; 
+	/*max-height:250px;*/   /*es para que no sea eterna la altura y se muestre el scroll*/
+	}	
+		
+  .formulario_filtro.formulario_estado .dk_options_inner {
+    list-style: none;
+    margin: 0;
+    padding: 0; 
+	max-height:250px;   /*es para que no sea eterna la altura y se muestre el scroll*/
+	}
+	
+  .formulario_filtro.formulario_user .dk_options_inner {
+    list-style: none;
+    margin: 0;
+    padding: 0; 
+	max-height:250px;   /*es para que no sea eterna la altura y se muestre el scroll*/
+	}	
+	
+  .formulario_filtro.formulario_tarjeta .dk_options_inner {
+    list-style: none;
+    margin: 0;
+    padding: 0; 
+	/*height:250px;   /*es para que no sea eterna la altura y se muestre el scroll*/
+	}
+	
+  .formulario_filtro.formulario_info .dk_options_inner {
+    list-style: none;
+    margin: 0;
+    padding: 0; 
+	max-height:250px;   /*es para que no sea eterna la altura y se muestre el scroll*/
+	}
+	
+	
+
+
+
+/* estos son los css del dropkick plain */
+
+.dk_container {
+  display: none;
+  /*float: left; */
+  margin:0px auto;
+    }
+  .dk_container a {
+    outline: 0; }
+
+.dk_toggle {
+  display: -moz-inline-stack;
+  display: inline-block;
+  position: relative;
+  zoom: 1; }
+
+.dk_open {
+  position: relative; }
+  .dk_open .dk_options {
+    display: block; }
+  .dk_open .dk_label {
+    color: inherit; }
+
+.dk_options {
+  display: none;
+  margin-top: -1px; /*antes tenia un menos 1*/
+  position: absolute;
+  /*el siguiente right se debe de ocultar para que funcione sin el trick */
+  right: 0;
+  width: 100%; }
+  .dk_options a, .dk_options a:link, .dk_options a:visited {
+    display: block; }
+
+.dk_options_inner {
+  overflow: auto;
+  position: relative;
+  -webkit-overflow-scrolling: touch; }
+
+.dk_container select {
+  position: absolute;
+  top: -99999em;
+  visibility: hidden;
+  display: none; }
+
+.dk_mobile {
+  position: relative; }
+  .dk_mobile select {
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    visibility: visible;
+    opacity: 0;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none; }
+
